@@ -1,0 +1,7 @@
+# Day 1
+
+Introduction to HTML
+o Topics: What is HTML, Basic structure of an HTML document, Common tags.
+o Reference: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
+o Practice: Create a webpage with headings, paragraphs, an image, and a link.
+
