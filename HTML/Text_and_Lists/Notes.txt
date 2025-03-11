@@ -1,0 +1,25 @@
+HTML Formatting Elements
+
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Smaller text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
+
+
+Nesting Level	Expected Numbering
+Level 1	1., 2., 3., 4.
+Level 2	a., b., c., d.
+Level 3	i., ii., iii., iv.
+Level 4+	Pattern repeats (1., a., i., 1., a., i.)
+
+Nesting Level	Default Bullet Style
+Level 1	• (Solid Disc)
+Level 2	◦ (Hollow Circle)
+Level 3	▪ (Square)
+Level 4+	Repeats Level 3 (▪) or follows parent styles
