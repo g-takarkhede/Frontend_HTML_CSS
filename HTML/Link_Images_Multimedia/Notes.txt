@@ -14,3 +14,45 @@ A common approach is to open external links in new tabs and internal links in th
     Send Email
 </a>
 %20 - space 
+
+
+# Multimedia
+
+Video Format 
+Only MP4, WebM, and Ogg video are supported by the HTML standard.
+
+Audio Format 
+Only MP3, WAV, and Ogg audio are supported by the HTML standard.
+
+Chromium browsers do not allow autoplay in most cases. However, muted autoplay is always allowed.
+
+The browser chooses the first format it supports.
+    <video controls>
+        <source src="video.mp4" type="video/mp4">  <!-- Works in Chrome, Edge, Safari -->
+        <source src="video.ogg" type="video/ogg">  <!-- Works in Firefox, Opera -->
+        <source src="video.webm" type="video/webm">  <!-- Works in newer browsers -->
+    </video>
+
+
+File Format	Media Type
+MP4	    video/mp4
+WebM	video/webm
+Ogg	    video/ogg
+
+
+The <track> tag is used to add subtitles (multiple languages), captions, descriptions, or metadata to a <video> element.
+Enhances SEO
+
+# Plug-ins  
+Plug-ins are computer programs that extend the standard functionality of the browser.
+
+The <video> tag does support links, but only direct video file URLs.
+ It does not support streaming platforms like YouTube that do not provide direct .mp4 or .webm links.
+
+
+
+
+
+pending : 
+For a full DOM reference, go to our HTML Audio/Video DOM Reference.
+HTML Plug-ins

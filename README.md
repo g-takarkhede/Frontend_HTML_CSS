@@ -28,7 +28,7 @@ o Practice: Create a feedback form with name, email, dropdown, and text area.
 o Topics: Introduction to semantic elements, Importance of semantic HTML for accessibility. 
 o Reference:  https://developer.mozilla.org/en
 US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure  
-o Practice: Build a blog layout using semantic tags like <header>, <section>, <footer>. 
+o Practice: Build a blog layout using semantic tags like header, section, footer. 
 
 • Week 1 Assignment: 
 Create a personal portfolio webpage including a photo, bio, navigation, and contact form.
