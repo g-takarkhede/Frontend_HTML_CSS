@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="name">Name</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <hr>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+        <input type="submit" value="submit">
+
+        <h3>Check box</h3>
+        <input type="checkbox" name="apple" id="apple" value="fruit">
+        <label for="apple">Apple</label>
+        <input type="checkbox" name="mango" id="mango" value="fruit">
+        <label for="mango">Mango</label>
+        <input type="checkbox" name="grapes" id="grapes" value="fruit">
+        <label for="grapes">Grapes</label>
+        <br>
+        <br>
+        <input type="submit" value="submit">
+
+        <hr>
+        <fieldset>
+            <legend>Car:</legend>
+            <label for="cars">Choose a car:</label>
+            <br>
+            <select id="cars" name="cars" size="3" multiple>
+                <option value="mercedes-benz">Mercedes-benz</option>
+                <option value="bmw">BMW</option>
+                <option value="rolls-royes">Rolls-Royes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </fieldset>
+        <hr>
+        <textarea name="message" rows="10" cols="30">
+            The cat was playing in the garden.
+        </textarea>
+        <hr>
+        <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+    </form>
+    <form>
+        <fieldset>
+            <legend> Fieldset 1</legend>
+
+            <br>
+            <input list="cars" name="car">
+            <datalist id="cars">
+                <option value="Mercedes-benz">
+                <option value="BMW">
+                <option value="Audi">
+                <option value="Porsche">
+                <option value="Ferrari">
+            </datalist>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <br>
+    <br>
+    <form action="/action_page.php">
+        <input type="text" list="cars" name="car">
+        <datalist id="cars">
+            <option value="Mercedes-benz">
+            <option value="BMW">
+            <option value="Audi">
+            <option value="Porsche">
+            <option value="Ferrari">
+        </datalist>
+        <input type="submit">
+    </form>
+    <form action="/action_page.php">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+    <form action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0
+        <input type="range" id="a" name="a" value="70">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+    </form>
+
+
+    <form action="/action_page.php">
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+            <optgroup label="Swedish Cars" disabled>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="German Cars">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </optgroup>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+</body>
+
+</html>

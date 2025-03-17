@@ -1,0 +1,181 @@
+reference : https://www.w3schools.com/html/html_forms.asp
+
+in form tag 
+action="/action_page.php" -  the form data is sent to a file called "action_page.php"
+If the action attribute is omitted, the action is set to the current page.
+
+The target attribute specifies where to display the response that is received after submitting the form.
+Value	Description
+_blank	The response is displayed in a new window or tab
+_self	The response is displayed in the current window
+_parent	The response is displayed in the parent frame -----> Used when the page is inside a frame.
+_top	The response is displayed in the full body of the window
+framename	The response is displayed in a named iframe
+
+
+
+The method attribute specifies the HTTP method to be used when submitting the form data.
+The default HTTP method when submitting form data is GET. 
+
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+
+Notes on GET:
+
+Appends the form data to the URL, in name/value pairs
+NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+The length of a URL is limited (2048 characters)
+Useful for form submissions where a user wants to bookmark the result
+GET is good for non-secure data, like query strings in Google
+
+
+Notes on POST:
+
+Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+
+Tip: Always use POST if the form data contains sensitive or personal information!
+
+
+Autocomplete Attribute
+automatically complete values based on values that the user has entered before.
+
+The novalidate attribute is a boolean attribute.
+
+
+List of All <form> Attributes
+
+Attribute	     Description
+accept-charset	 Specifies the character encodings used for form submission
+action	         Specifies where to send the form-data when a form is submitted
+autocomplete	 Specifies whether a form should have autocomplete on or off
+enctype	         Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
+method	         Specifies the HTTP method to use when sending form-data
+name	         Specifies the name of the form
+novalidate	     Specifies that the form should not be validated when submitted
+rel	             Specifies the relationship between a linked resource and the current document
+target	         Specifies where to display the response that is received after submitting the form
+
+
+
+The HTML <form> Elements
+
+<input>
+<label>
+<select>
+<textarea>
+<button>
+<fieldset>
+<legend>
+<datalist>
+<output>
+<option>
+<optgroup>
+
+
+The <fieldset> element is used to group related data in a form.
+
+The <legend> element defines a caption for the <fieldset> element.
+
+The <datalist> element specifies a list of pre-defined options for an <input> element.
+
+The <output> element represents the result of a calculation (like one performed by a script).
+in form tag, use oninput
+ex. oninput="x.value=parseInt(a.value)+parseInt(b.value)" where a and b are the names of the input fields.
+
+inside form tag 
+<output name="x" for="a b"></output>
+
+
+HTML Input Types
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
+
+
+Input Restrictions
+
+Attribute	    Description
+checked	        Specifies that an input field should be pre-selected when the page loads (for type="checkbox" or type="radio")
+disabled	    Specifies that an input field should be disabled
+max	            Specifies the maximum value for an input field
+maxlength	    Specifies the maximum number of character for an input field
+min	            Specifies the minimum value for an input field
+pattern	        Specifies a regular expression to check the input value against
+readonly	    Specifies that an input field is read only (cannot be changed)
+required	    Specifies that an input field is required (must be filled out)
+size	        Specifies the width (in characters) of an input field (visible width)
+step	        Specifies the legal number intervals for an input field
+value	        Specifies the default value for an input field
+
+max and min attributes together to create a range of legal values.
+
+
+Input Attributes
+
+value
+readonly
+disabled
+size 
+maxlength
+min
+max
+multiple
+pattern
+placeholder
+step 
+autofocus
+height
+width
+list 
+autocomplete
+
+
+#Input Attributes
+
+1. The form Attribute
+The input form attribute specifies the form the <input> element belongs to.
+The value of this attribute must be equal to the id attribute of the <form> element it belongs to.
+
+2. The formaction Attribute
+The input formaction attribute specifies the URL of the file that will process the input when the form is submitted.
+Note: This attribute overrides the action attribute of the <form> element.
+The formaction attribute works with the following input types: submit and image.
+
+3. The formenctype Attribute
+
+The input formenctype attribute specifies how the form-data should be encoded when submitted (only for forms with method="post").
+Note: This attribute overrides the enctype attribute of the <form> element.
+The formenctype attribute works with the following input types: submit and image.
+
+
+
+
+
+
+
+
+
+pending : HTML Input form* Attributes
