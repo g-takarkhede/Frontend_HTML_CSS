@@ -1,0 +1,38 @@
+html {
+    background-color: aquamarine;
+}
+
+body {
+    background-color: blueviolet;
+    color: aliceblue;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    border: 2px solid black;
+}
+
+h1 {
+    font-size: 60px;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+h1:hover{
+    color: red;
+}
+
+.heading {
+    font-family: "Playwrite HU", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    /* font-style: normal; */
+    
+}
+
+p,
+li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}

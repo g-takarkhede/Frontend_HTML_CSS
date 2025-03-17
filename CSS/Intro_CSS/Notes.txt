@@ -1,0 +1,24 @@
+CSS is a style sheet language
+
+selector{
+    property : property-value; ----> Declaration
+}
+
+whole structure - ruleset
+
+Selector-name
+
+Element selector (Type, Tag)
+Id selector
+Class selector
+Attribute selector (img[src])
+Pseudo-class selector
+
+
+
+# text-shadow: 3px 3px 1px black;
+
+The first pixel value sets the horizontal offset of the shadow from the text: how far it moves across.
+The second pixel value sets the vertical offset of the shadow from the text: how far it moves down.
+The third pixel value sets the blur radius of the shadow. A larger value produces a more fuzzy-looking shadow.
+The fourth value sets the base color of the shadow.
