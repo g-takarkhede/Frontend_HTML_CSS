@@ -1,0 +1,30 @@
+Structuring documents
+
+header: <header>.
+navigation bar: <nav>.
+main content: <main>, with various content subsections represented by <article>, <section>, and <div> elements.
+sidebar: <aside>; often placed inside <main>.
+footer: <footer>.
+
+
+Non-semantic wrappers
+
+<span> is an inline non-semantic element
+<div> is a block level non-semantic element
+
+
+<br>: the line break element
+<hr>: the thematic break element
+
+
+<article>: Represents Independent Content
+<section>: Groups Related Content
+<aside>: Sidebar or Extra Information
+
+
+Even though these tags don’t directly affect appearance, they are extremely useful for:
+1. SEO (Search Engine Optimization) 📈
+2. Accessibility (Screen Readers & Assistive Tech) ♿
+3. Better Code Organization & Readability 👀
+4. Easier CSS Styling 🎨
+5. Future-Proofing & HTML5 Standards 🚀
