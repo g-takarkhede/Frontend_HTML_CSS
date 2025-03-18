@@ -1,0 +1,100 @@
+
+block box
+ex. <h1>, <p>, <li>
+
+
+inline box
+Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+Left and right padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
+ex. <a>, <span>, <em>, <strong>
+
+block and inline display values are said to be outer display types
+flex and grid inner display types
+
+
+box-sizing: border-box;
+the actual space taken up by the box will be 350px in the inline direction and 150px in the block direction.
+
+
+.box {
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+The actual space taken up by the box will be 410px wide (350 + 25 + 25 + 5 + 5) and 210px high (150 + 25 + 25 + 5 + 5).
+
+
+box-sizing  
+border-box - total width equals to width of box
+content-box - total width equals to width+border+padding (default)
+
+: (Single Colon) → Pseudo-classes
+:hover → When an element is hovered
+:focus → When an element is focused (e.g., an input field)
+:nth-child(n) → Selects specific children in a parent
+:checked → Applies styles to checked checkboxes/radio buttons
+
+
+:: (Double Colon) → Pseudo-elements
+::before → Inserts content before an element
+::after → Inserts content after an element
+::first-letter → Styles the first letter of a block of text
+::first-line → Styles the first line of a paragraph
+::selection → Styles the selected text
+
+In CSS3, :: was introduced to differentiate pseudo-elements from pseudo-classes.
+
+CSS provides two ways to define styles: shorthand (shorter, combined properties) and longhand (individual properties).
+
+ex.
+border: 2px solid red;  ----shorthand
+border-width: 2px;
+border-style: solid;
+border-color: red;  ----longhand
+
+
+Margin collapsing
+1️⃣ Two Positive Margins → The larger margin wins
+2️⃣ Two Negative Margins → The more negative margin wins
+3️⃣ One Positive & One Negative Margin → They subtract each other
+
+Float positioning - The space remains 50px + 30px = 80px, because floating elements do not collapse margins with normal elements.
+Absolute positioning - Each element is independent, so their margins do not collapse. The total space remains 80px instead of collapsing to 50px.
+
+The float property is used to position elements to the left or right of a container, allowing text or other content to wrap around them.
+ Other content flows around the floated element.
+ If not cleared properly, it may cause layout issues (clear: both; can fix this).
+
+The Absolute positioning removes an element from the normal flow and positions it relative to the nearest positioned ancestor (relative, absolute, fixed).
+ Removes the element from normal document flow.
+ If no ancestor is positioned, it will be relative to the <html> (viewport).
+
+If a parent has no padding, border, or content, and a child inside it has a top margin, the child's margin will "escape" and act like the parent’s margin instead.
+
+Empty element - If an element has no content, padding, or border, and it has both margin-top and margin-bottom, these two margins collapse into one.
+
+Only margin-top and margin-bottom collapse when they touch.
+Left (margin-left) and right (margin-right) margins do not collapse.
+
+
+Horizontal Margins Don't Collapse
+Final margin between box1 and box2 = 30px + 20px = 50px (they add up).
+
+Final margin = 50px (margins add up, no collapsing). in flex and grid
+
+Collapsing Prevented with Padding
+Final margin = 50px + 10px padding + 30px = 90px (no collapsing).
+
+When Do Margins NOT Collapse?
+❌ Margins do NOT collapse when:
+✅ There is padding or border in between.
+✅ The element is using Flexbox (display: flex) or Grid (display: grid).
+✅ The element has position: absolute or float: left/right.
+
+margin collapsing only happens in normal block elements (elements with display: block).
+
+<div>, <p>, <h1> - all default to display: block;
+<span>, <a>, <strong>, <em> - all default to display: inline;
+<button>, <img> - default to inline-block;
