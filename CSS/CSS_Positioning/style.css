@@ -1,0 +1,27 @@
+.container{
+    width: 50vw;
+    height: 40vh;
+}
+
+.relativep {
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+.absolutep{
+    position: absolute;
+    top: 7rem;
+    right: 1rem
+}
+
+.fixedp{
+    position: fixed;
+    bottom: 2rem;
+    left: 3rem;
+}
+
+.stickyp{
+    position: sticky;
+    top: 1rem;
+}
