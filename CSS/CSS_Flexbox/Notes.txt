@@ -1,0 +1,29 @@
+Flex container 
+Flex items
+
+main axis -> main start to main end = main size 
+cross axis -> cross start to cross end = cross size
+
+section {
+  flex-wrap: wrap;
+}
+
+
+flex-flow shorthand
+
+flex-direction: row;
+flex-wrap: wrap;
+
+replace with
+flex-flow: row wrap;
+
+flex: <flex-grow> <flex-shrink> <flex-basis>;
+
+
+Horizontal and vertical alignment
+
+The align-items property controls where the flex items sit on the cross axis.
+justify-content controls where the flex items sit on the main axis.
+
+Ordering flex items
+By default, all flex items have an order value of 0.
