@@ -1,0 +1,55 @@
+Responsive web design, or RWD, is a design approach that addresses the range of devices and device sizes, 
+enabling automatic adaption to the screen, whether the content is viewed on a tablet, phone, television, or watch.
+
+
+The screen keyword tells the browser that this media query applies only when viewing the page on a screen (like a desktop, tablet, or smartphone).
+all → Default; applies to all devices.
+print → For printed documents.
+speech → For screen readers.
+
+The points at which a media query is introduced, and the layout changed, are known as breakpoints.
+
+Designing for mobile first is known as mobile first design.
+
+The <picture> Element – Selecting the Right Image for Each Device
+The <picture> element allows you to define multiple image sources and lets the browser choose the best one based on the device size.
+
+srcset is noly for images
+media in <source> Multiple sources for images, audio, video
+<picture>
+  <source srcset="image-small.jpg" media="(max-width: 600px)">
+  <source srcset="image-medium.jpg" media="(max-width: 1200px)">
+  <img src="image-large.jpg" alt="A responsive image">
+</picture>
+
+Responsive Video Using the <video> Element
+<video controls>
+  <source src="video-small.mp4" type="video/mp4" media="(max-width: 600px)">
+  <source src="video-medium.mp4" type="video/mp4" media="(max-width: 1200px)">
+  <source src="video-large.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+The <img> Element with srcset and sizes Attributes
+<img src="image-large.jpg"
+     srcset="image-small.jpg 500w,
+             image-medium.jpg 1000w,
+             image-large.jpg 2000w"
+     sizes="(max-width: 600px) 100vw, 
+            (max-width: 1200px) 50vw, 
+            33vw"
+     alt="A responsive image">
+
+
+
+h1 {
+  font-size: calc(1.5rem + 4vw);
+}
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+width=device-width → Sets the viewport width to match the device's screen width.
+initial-scale=1 → Ensures the page loads at 100% zoom (prevents automatic zooming).
