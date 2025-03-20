@@ -1,0 +1,95 @@
+// @import "variable";
+@use "variable";
+@use "mixin";
+@use "style";
+
+@use "sass:math";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.main_header {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: cadetblue;
+}
+
+h1 {
+    color: rgb(15, 12, 72);
+}
+
+// Nexting
+.box-section {
+    display: flex;
+    background-color: rgb(23, 90, 90);
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+
+    .box {
+        // @extend .box; 
+        background-color: rgb(202, 167, 235);
+        // text-decoration: underline dotted rgb(248, 8, 8);
+        padding: 1rem;
+        color: variable.$text-color;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: variable.$text-size;
+    }
+}
+
+.box {
+    background-color: rgba(246, 255, 161, 0.655);
+    height: 5rem;
+    font-size: 2rem;
+    color: blue;
+    font-weight: bolder;
+    text-align: center;
+    padding: 1.5rem;
+    text-decoration: underline dashed black; // if property is present in nested, then it will be applied and if not then property outside will be applied (order doesn't matter)
+}
+
+// %message-shared {
+//     border: 1px solid #ccc;
+//     padding: 10px;
+//     color: #333;
+// }
+
+
+
+/* Extend/Inheritance */
+%shared-css {
+    text-transform: uppercase;
+}
+
+
+//mixins and modules
+.btn {
+    // @extend %message-shared;
+    @extend %shared-css;
+    display: block;
+    height: 3rem;
+    width: 5rem;
+    ;
+    @include mixin.btns(orange);
+    @include style.btn;
+}
+
+//Operators
+.btn2 {
+    @extend %shared-css;
+    @include style.btn2;
+    display: block;
+    width: math.div(100px, 960px) * 100%;
+    height: math.div(50px, 500px) * 100%;
+}

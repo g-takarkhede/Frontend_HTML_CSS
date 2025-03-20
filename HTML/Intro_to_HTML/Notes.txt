@@ -49,3 +49,14 @@ attr = href, target
 Boolean attributes - attributes written without values
 
 To use quote marks inside other quote marks of the same type (single quote or double quote), use character references.  ( &quot;)
+
+
+Common role Values and Their Uses:
+role Value	Meaning & Usage
+role="main"	Marks the primary content of the page. Used inside <article>.
+role="complementary"	Used for sidebars or additional content that supports the main content. Typically inside <aside>.
+role="navigation"	Defines a section for navigation menus (e.g., inside <nav>).
+role="banner"	Represents a site-wide header (usually inside <header>).
+role="contentinfo"	Marks the footer area with contact info, copyright, etc.
+role="button"	Used to make elements behave like a button (e.g., <div role="button">).
+role="alert"	For notifications or alerts that require immediate user attention.

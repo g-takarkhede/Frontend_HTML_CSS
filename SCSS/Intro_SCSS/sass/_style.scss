@@ -1,0 +1,21 @@
+@mixin btn {
+    box-shadow: 10px 5px 5px gray;
+    margin-bottom: 2rem;
+}
+
+@mixin btn2 {
+    color: red;
+}
+
+.btn2{
+    background-color: aquamarine;
+}
+
+// .btn{
+//     box-shadow: 10px 5px 5px gray;
+//     margin-bottom: 2rem;
+// }
+
+// .btn2{
+//     color: red;
+// }

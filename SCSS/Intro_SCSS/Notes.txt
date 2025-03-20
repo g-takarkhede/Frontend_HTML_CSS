@@ -1,0 +1,75 @@
+SCSS - CSS3
+SASS - CSS
+
+SCSS (Sassy CSS) is a syntax of Sass (Syntactically Awesome Stylesheets)
+
+✅ Variables – Store colors, font sizes, etc.
+✅ Nesting – Write cleaner code by nesting selectors.
+✅ Mixins – Reuse styles with dynamic values.
+✅ Inheritance – Extend styles from other selectors.
+✅ Functions & Operators – Perform calculations inside styles.
+✅ Modularity – Split code into multiple files and import them.
+
+
+
+
+in css 
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-size: 16px;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-size: var(--font-size);
+}
+
+
+local scope
+.card {
+  --card-bg: #f4f4f4;
+  background-color: var(--card-bg);
+  padding: 20px;
+}
+
+h1 {
+  color: var(--heading-color, black); /* Uses black if --heading-color is not defined */
+}
+
+
+in SCSS
+$bg-color : red;
+
+background-color : $bg-color;
+
+
+✅ By default, .box-section .box will have higher specificity than .box, so the first rule applies.
+✅ If you want the standalone .box styles to be inherited, use @extend .box; or !important inside .box.
+
+.box-section {
+    .box {
+        @extend .box; // This ensures it gets the styles from the standalone .box
+        background-color: rgb(202, 167, 235); // Additional styling specific to .box inside .box-section
+    }
+}
+
+
+✅ Use @use (Recommended)
+❌ @import is deprecated and should not be used in modern Sass.
+
+
+if both _base.scss and styles.scss have .box1 styles,
+ the styles will be merged, and the last one will take precedence.
+
+@forward is used to expose variables, mixins, and functions without including any CSS automatically.
+
+Feature	             @extend (Inheritance)	                       @mixin (Reusable Code Block)
+How it works	       Merges selectors	                             Duplicates styles where used
+Reduces CSS size?	   ✅ Yes (combines rules)	                     ❌ No (duplicates code)
+Accepts parameters?  ❌ No	                                       ✅ Yes (flexible)
+Used for	           Shared base styles (e.g., button, alerts)	   Customizable styles with arguments
+When to use?	       When multiple elements share common styles	   When you need flexibility with variables
+
+
+

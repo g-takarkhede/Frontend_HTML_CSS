@@ -1,0 +1,72 @@
+.btn2 {
+  background-color: aquamarine;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_header {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: cadetblue;
+}
+
+h1 {
+  color: rgb(15, 12, 72);
+}
+
+.box-section {
+  display: flex;
+  background-color: rgb(23, 90, 90);
+  width: 100%;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.box-section .box {
+  background-color: rgb(202, 167, 235);
+  padding: 1rem;
+  color: rgba(104, 2, 46, 0.906);
+  font-style: italic;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.box {
+  background-color: rgba(246, 255, 161, 0.655);
+  height: 5rem;
+  font-size: 2rem;
+  color: blue;
+  font-weight: bolder;
+  text-align: center;
+  padding: 1.5rem;
+  -webkit-text-decoration: underline dashed black;
+          text-decoration: underline dashed black;
+}
+
+/* Extend/Inheritance */
+.btn2, .btn {
+  text-transform: uppercase;
+}
+
+.btn {
+  display: block;
+  height: 3rem;
+  width: 5rem;
+  background-color: orange;
+  box-shadow: 10px 5px 5px gray;
+  margin-bottom: 2rem;
+}
+
+.btn2 {
+  color: red;
+  display: block;
+  width: 10.4166666667%;
+  height: 10%;
+}/*# sourceMappingURL=main.css.map */
