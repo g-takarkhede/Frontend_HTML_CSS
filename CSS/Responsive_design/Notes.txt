@@ -53,3 +53,8 @@ h1 {
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 width=device-width → Sets the viewport width to match the device's screen width.
 initial-scale=1 → Ensures the page loads at 100% zoom (prevents automatic zooming).
+
+
+@media (min-width:300px) and (max-width:600px){
+  
+}

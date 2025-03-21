@@ -27,3 +27,15 @@ justify-content controls where the flex items sit on the main axis.
 
 Ordering flex items
 By default, all flex items have an order value of 0.
+
+align-content: center, flex-start, flex-end;  --> cross-axis
+
+align-items--> items align but there is space between items if wrapped
+
+align-self--> particular item aligns across cross axis
+
+align-self has high priority than align-items (irrespective of order)
+
+flex-shrink
+flex-grow
+

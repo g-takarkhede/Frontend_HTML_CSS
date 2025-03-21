@@ -56,3 +56,10 @@ line-height : 20px
 
 text-transform : uppercase, lowercase, capitalize, none
 
+background-image: url()
+background-size: cover, contain, auto;
+background-repeat: no-repeat;
+
+cover: leaves no empty space
+contain: whole image is visible (image can repeat)
+auto: default (may be zoomed in image)

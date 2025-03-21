@@ -60,3 +60,12 @@ role="banner"	Represents a site-wide header (usually inside <header>).
 role="contentinfo"	Marks the footer area with contact info, copyright, etc.
 role="button"	Used to make elements behave like a button (e.g., <div role="button">).
 role="alert"	For notifications or alerts that require immediate user attention.
+
+
+Display : none -->no space reserved 
+visibility : hidden --> space reserved
+
+
+color (R,G,B,A)
+
+A-alpha (opacity)

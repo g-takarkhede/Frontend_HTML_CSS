@@ -3,7 +3,7 @@ Different Types of Positioning in CSS
 static (default) - No effect of top, left, right, or bottom.
 relative - top, left, right, and bottom work and shift the element without affecting surrounding elements.
 absolute - The element is removed from the normal flow and positioned relative to the nearest positioned ancestor (not static).
-fixed - The element is removed from the normal flow and positioned relative to the viewport.
+fixed - The element is removed from the normal flow and positioned relative to the viewport(browser).
 sticky - Acts like relative until a certain scroll position is reached, then it behaves like fixed.
 
 
