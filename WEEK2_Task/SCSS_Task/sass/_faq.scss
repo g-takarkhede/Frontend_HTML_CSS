@@ -1,0 +1,59 @@
+.faq-main {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding-bottom: 4rem;
+
+    .faq-section {
+        width: 70%;
+        margin: auto;
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 4rem auto;
+
+            span {
+                color: red;
+            }
+        }
+
+        .faqs {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .faq .que {
+                font-size: 1.3rem;
+                font-weight: bolder;
+                margin-bottom: 1rem;
+            }
+
+            .faq .ans {
+                color: rgba(0, 0, 0, 0.616);
+            }
+        }
+    }
+}
+
+.navbar .main-head a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 700px) {
+    .faq-main .faq-section{
+        width: 85%;
+
+        h1{
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .faq-main .faq-section{
+        width: 90%;
+
+        h1{
+            font-size: 1.7rem;
+        }
+    }
+}

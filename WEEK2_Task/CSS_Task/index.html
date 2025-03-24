@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <!-- Google font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Playwrite+HU:wght@100..400&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+<body>
+    <!-- Design a product landing page with a header, navigation bar, grid-based product gallery, and responsive layout. -->
+    <header>
+        <nav class="navbar">
+            <div class="main-head">
+                <h1><span>Little</span> Fashion</h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger"></label>
+            <div class="nav-list">
+                <ul>
+                    <li class="navlist-items"><a href="#">Home</a></li>
+                    <li class="navlist-items"><a href="#">Story</a></li>
+                    <li class="navlist-items"><a href="#gallery">Products</a></li>
+                    <li class="navlist-items"><a href="./faq.html">FAQ's</a></li>
+                    <li class="navlist-items"><a href="#">Contacts</a></li>
+                    <li class="navlist-items account-icon"><a href="#"><ion-icon
+                                name="person-circle-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+            
+        </nav>
+        <div class="loader-overlay">
+            <div class="loader"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-pg">
+            <div class="overlay">
+                <h1> <b>Cool Fashion</b></h1>
+                <h4>Little fashion template comes with total 8 HTML pages
+                    provided by Tooplate website.
+                </h4>
+                <button class="hero-btn"><b> WORK WITH US </b></button>
+            </div>
+        </div>
+
+        <div class="intro">
+            <h1 class="intro-head">Get started with <span> Little</span> Fashion</h1>
+
+            <div class="intro-section">
+                <div class="intro-image"><img src="../images/img1.jpg" alt="img1"></div>
+                <div class="intro-content">
+                    <h1> Good <span> Design</span>
+                        Ideas for <br> your fashion </h1>
+
+                    <p class="intro-para">Little Fashion templates comes with sign in / sign up pages, product listing /
+                        product detail,
+                        about, FAQs, and contact page.
+
+                        Since this HTML template is based on Boostrap CSS library, you can feel free to add more
+                        components as you need.</p>
+
+                    <a href="#">Learn more about us <span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="gallery" id="gallery">
+            <h1>Featured <span>Products</span></h1>
+            <div class="products">
+
+                <img src="../images/p1.jpg" alt="" class="img1">
+                <img src="../images/p2.jpg" alt="" class="img2">
+                <img src="../images/p3.jpg" alt="" class="img3">
+                <img src="../images/p4.jpg" alt="" class="img4">
+                <img src="../images/p5.jpg" alt="" class="img5">
+                <img src="../images/p6.jpg" alt="" class="img6">
+            </div>
+        </div>
+        <div class="contact-section">
+            <h1>GET IN TOUCH</h1>
+            <form action="submit.php" method="POST" class="contact-form">
+                <div class="user-details">
+                    <div class="name-input">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="mail-input">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <a href="#"><button type="submit" class="submit-btn">Send Message</button></a>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <h4>Copyright &copy; 2045 <a href="#"><span> Little</span> Fashion</a></h4>
+    </footer>
+
+</body>
+
+</html>
+
+
+<!-- https://www.free-css.com/free-css-templates/page296/little-fashions -->

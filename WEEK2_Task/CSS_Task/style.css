@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 100;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-list ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    color: rgba(0, 0, 0, 0.724);
+}
+
+.navbar .nav-list ul a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar .nav-list ul .account-icon ion-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger Icon */
+.navbar .hamburger::before {
+    content: "≡";
+    font-size: 30px;
+    visibility: hidden;
+}
+
+#menu-toggle:checked+.hamburger::before {
+    content: "✖";
+    font-size: 30px;
+}
+
+/* Main head */
+.navbar .main-head {
+    font-size: 1.5rem;
+}
+
+.navbar .main-head span {
+    color: red;
+}
+
+/* Loader */
+@keyframes rotate {
+    0%{
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+        visibility: hidden;
+    }
+}
+
+@keyframes overlay-animation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.708);
+    z-index: 1000;
+    animation: overlay-animation 5s ease-out forwards;
+}
+
+.loader-overlay .loader {
+    height: 100px;
+    width: 100px;
+    border: 5px solid rgba(0, 0, 0, 0.607);
+    border-radius: 50%;
+    position: fixed;
+    left: 45%;
+    top: 45%;
+    z-index: 10;
+    border-top: 5px solid white;
+    animation: rotate 2s ease-in 0s 2;
+}
+
+
+/* Hero Page */
+.hero-pg {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 3rem;
+    background-image: url(../images/hero-bgnew.jpg);
+    background-size: cover;
+    color: white;
+
+}
+
+.hero-pg .overlay {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.384);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 5%;
+}
+
+.hero-pg .overlay h1 {
+    font-size: 3rem;
+}
+
+.hero-pg .overlay h4 {
+    width: 80%;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.692);
+}
+
+.hero-pg .overlay button {
+    width: 20%;
+    min-width: 10rem;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-pg .overlay button:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Intro section */
+.intro {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.intro .intro-head {
+    font-size: 2.5rem;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.intro .intro-head span {
+    color: red;
+}
+
+.intro .intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.intro .intro-section .intro-image img {
+    width: 35vw;
+    height: auto;
+}
+
+.intro .intro-section .intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.intro .intro-section .intro-content span {
+    color: red;
+}
+
+.intro .intro-section .intro-content .intro-para {
+    color: rgba(0, 0, 0, 0.648);
+}
+
+.intro .intro-section .intro-content a {
+    color: red;
+    text-decoration: none;
+}
+
+/* Gallery */
+.gallery h1 {
+    font-size: 2.5rem;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.gallery .products {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.gallery .products img {
+    width: 100%;
+    height: auto;
+}
+
+/* Contact form  */
+.contact-section {
+    width: 100%;
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.contact-section h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.contact-section .contact-form {
+    width: 70%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.contact-section .contact-form .user-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.contact-section .contact-form .user-details .name-input,
+.contact-section .contact-form .user-details .mail-input {
+    width: 40%;
+}
+
+.contact-section .contact-form .user-details .name-input input {
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+}
+
+.contact-section .contact-form .user-details .mail-input input {
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+}
+
+.contact-section .contact-form .user-details .name-input label {
+    display: block;
+}
+
+.contact-section .contact-form .user-details .mail-input label {
+    display: block;
+}
+
+.contact-section .contact-form .message-input textarea {
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    width: 100%;
+}
+
+.contact-section .contact-form .message-input {
+    width: 100%;
+}
+
+.contact-section .contact-form button {
+    width: 11rem;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Footer  */
+footer {
+    height: 4rem;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.788);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer h4 {
+    font-weight: lighter;
+}
+
+footer span {
+    color: rgba(255, 0, 0, 0.76);
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsiveness */
+@media screen and (max-width:700px) {
+    .intro {
+        width: 80%;
+    }
+
+    .intro .intro-section {
+        flex-direction: column;
+    }
+
+    .intro .intro-section .intro-image img {
+        width: 60vw;
+    }
+
+    .intro .intro-section .intro-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .intro .intro-head,
+    .gallery h1,
+    .contact-section h1 {
+        font-size: 2.1rem;
+    }
+
+    .contact-section .contact-form {
+        width: 80%;
+    }
+
+    .contact-section .contact-form button {
+        font-size: 1rem;
+        width: 10rem;
+    }
+
+    .gallery .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar .hamburger::before {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+        visibility: visible;
+    }
+
+    .navbar .nav-list ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        padding: 3rem;
+        width: 100%;
+        background: #ffffff;
+        text-align: center;
+    }
+
+    .navbar #menu-toggle:checked+.hamburger+.nav-list ul {
+        display: flex;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar .main-head {
+        font-size: 1.2rem;
+    }
+
+    .intro .intro-head,
+    .gallery h1,
+    .contact-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-section .intro-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro-section .intro-image img {
+        width: 70vw;
+    }
+
+    .contact-section .contact-form {
+        width: 90%;
+    }
+
+    .gallery .products {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section .contact-form .user-details {
+        flex-direction: column;
+    }
+
+    .contact-section .contact-form .user-details .name-input,
+    .contact-section .contact-form .user-details .mail-input {
+        width: 100%;
+    }
+}

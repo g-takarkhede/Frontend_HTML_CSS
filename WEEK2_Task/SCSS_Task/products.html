@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sass/main.css">
+
+    <!-- icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="main-head">
+                <h1><span>Little</span> Fashion</h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger"></label>
+            <div class="nav-list">
+                <ul>
+                    <li class="navlist-items"><a href="./index.html">Home</a></li>
+                    <li class="navlist-items"><a href="./about.html">About</a></li>
+                    <li class="navlist-items"><a href="#">Products</a></li>
+                    <li class="navlist-items"><a href="./faq.html">FAQ's</a></li>
+                    <li class="navlist-items"><a href="./contacts.html">Contacts</a></li>
+                    <li class="navlist-items account-icon"><a href="#"><ion-icon
+                                name="person-circle-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="loader-overlay">
+            <div class="loader"></div>
+        </div>
+    </header>
+    <main>
+        <div class="backward-arw-products"><a href="./about.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
+        </div>
+        <div class="forward-arw-products"><a href="./faq.html"><ion-icon name="arrow-forward-outline"></ion-icon></a>
+        </div>
+
+        <div class="gallery" id="gallery" style="margin-top: 5rem; display: flex; flex-direction:column; margin-bottom: 5rem;">
+            <h1>Featured Products</h1>
+            <div class="products">
+
+                <img src="../images/p1.jpg" alt="" class="img1">
+                <img src="../images/p2.jpg" alt="" class="img2">
+                <img src="../images/p3.jpg" alt="" class="img3">
+                <img src="../images/p4.jpg" alt="" class="img4">
+                <img src="../images/p5.jpg" alt="" class="img5">
+                <img src="../images/p6.jpg" alt="" class="img6">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

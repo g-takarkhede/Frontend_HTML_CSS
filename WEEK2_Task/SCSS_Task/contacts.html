@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sass/main.css">
+
+     <!-- icons -->
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="main-head">
+                <h1><span>Little</span><a href="./index.html"> Fashion</a></h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger"></label>
+            <div class="nav-list">
+                <ul>
+                    <li class="navlist-items"><a href="./index.html">Home</a></li>
+                    <li class="navlist-items"><a href="./about.html">About</a></li>
+                    <li class="navlist-items"><a href="./products.html">Products</a></li>
+                    <li class="navlist-items"><a href="./faq.html">FAQ's</a></li>
+                    <li class="navlist-items"><a href="#">Contacts</a></li>
+                    <li class="navlist-items account-icon"><a href="#"><ion-icon
+                                name="person-circle-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="loader-overlay">
+            <div class="loader"></div>
+        </div>
+    </header>
+    <main>
+        <div class="backward-arw-contacts"><a href="./faq.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
+        </div>
+        <div class="contact-section" style="padding-top: 6rem;">
+            <h1>GET IN TOUCH</h1>
+            <form action="submit.php" method="POST" class="contact-form">
+                <div class="user-details">
+                    <div class="name-input">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="mail-input">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <a href="#"><button type="submit" class="submit-btn">Send Message</button></a>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -80,7 +80,7 @@ h1 {
     display: block;
     height: 3rem;
     width: 5rem;
-    ;
+    
     @include mixin.btns(orange);
     @include style.btn;
 }
