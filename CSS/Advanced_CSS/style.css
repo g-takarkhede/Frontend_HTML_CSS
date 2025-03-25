@@ -1,0 +1,20 @@
+.head1{
+    height: 200px;
+    width: 200px;
+    background-color: blueviolet;
+    animation: rotate 2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes rotate {
+    0%{
+        border-radius: 0;
+        rotate: 0deg;
+    }
+    100%{
+        border-radius: 50%;
+        rotate: 180deg;
+    }
+}

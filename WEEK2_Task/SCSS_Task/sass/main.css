@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
 .faq-main {
-  background-color: rgba(0, 0, 0, 0.05);
   padding-bottom: 4rem;
 }
 .faq-main .faq-section {
@@ -68,34 +67,13 @@ html {
   text-align: center;
 }
 
-.contact-section .contact-form .user-details .mail-input input, .contact-section .contact-form .user-details .name-input input {
+.contact-section .contact-form .user-details .name-input input,
+.contact-section .contact-form .user-details .mail-input input {
   width: 100%;
   height: 2rem;
   border: none;
   border-bottom: 2px solid black;
   background: transparent;
-}
-
-.forward-arw-faqs, .forward-arw-products, .forward-arw-about, .forward-arw-index {
-  position: absolute;
-  top: 5rem;
-  right: 1rem;
-}
-.forward-arw-faqs ion-icon, .forward-arw-products ion-icon, .forward-arw-about ion-icon, .forward-arw-index ion-icon {
-  color: black;
-  height: 2rem;
-  width: 2rem;
-}
-
-.backward-arw-contacts, .backward-arw-faqs, .backward-arw-products, .backward-arw-about {
-  position: absolute;
-  top: 5rem;
-  left: 1rem;
-}
-.backward-arw-contacts ion-icon, .backward-arw-faqs ion-icon, .backward-arw-products ion-icon, .backward-arw-about ion-icon {
-  color: black;
-  height: 2rem;
-  width: 2rem;
 }
 
 /* Navbar */
@@ -107,7 +85,7 @@ html {
   z-index: 100;
   background-color: white;
   display: flex;
-  align-items: center;
+  align-items: normal;
   justify-content: space-between;
   /* Main head */
   /* Hamburger Icon */
@@ -121,18 +99,19 @@ html {
 .navbar #menu-toggle {
   display: none;
 }
-.navbar .nav-list ul {
+.navbar .nav-list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
   list-style: none;
   color: rgba(0, 0, 0, 0.5);
 }
-.navbar .nav-list ul a {
+.navbar .nav-list-items a {
   text-decoration: none;
   color: inherit;
 }
-.navbar .nav-list ul .account-icon ion-icon {
+.navbar .nav-list .account-icon ion-icon {
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -147,10 +126,101 @@ html {
 }
 
 .forward-arw-index {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  left: auto;
   z-index: 10;
 }
 .forward-arw-index ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+.forward-arw-index ion-icon {
   color: white;
+}
+
+.backward-arw-about {
+  position: absolute;
+  top: 5rem;
+  right: auto;
+  left: 1rem;
+}
+.backward-arw-about ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.forward-arw-about {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  left: auto;
+}
+.forward-arw-about ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.backward-arw-products {
+  position: absolute;
+  top: 5rem;
+  right: auto;
+  left: 1rem;
+}
+.backward-arw-products ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.forward-arw-products {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  left: auto;
+}
+.forward-arw-products ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.backward-arw-faqs {
+  position: absolute;
+  top: 5rem;
+  right: auto;
+  left: 1rem;
+}
+.backward-arw-faqs ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.forward-arw-faqs {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  left: auto;
+}
+.forward-arw-faqs ion-icon {
+  color: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.backward-arw-contacts {
+  position: absolute;
+  top: 5rem;
+  right: auto;
+  left: 1rem;
+}
+.backward-arw-contacts ion-icon {
+  color: black;
   height: 2rem;
   width: 2rem;
 }
@@ -203,34 +273,35 @@ html {
   padding-top: 3rem;
   background-image: url(../../images/hero-bgnew.jpg);
   background-size: cover;
+  background-position: top;
   color: white;
 }
 .hero-pg .overlay {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.384);
   display: flex;
-  flex-direction: column;
+  align-items: normal;
   justify-content: center;
+  flex-direction: column;
   gap: 2rem;
   padding-left: 5%;
 }
 .hero-pg .overlay h1 {
   font-size: 3rem;
 }
-.hero-pg .overlay h4 {
+.hero-pg .overlay p {
   width: 80%;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.692);
 }
 .hero-pg .overlay button {
-  width: 20%;
+  width: 11rem;
   background-color: black;
   color: white;
   padding: 1rem;
   border-radius: 30px;
-  border: none;
+  border: 2px solid black;
   cursor: pointer;
-  min-width: 10rem;
 }
 .hero-pg .overlay button:hover {
   color: black;
@@ -247,7 +318,7 @@ html {
 }
 .intro .intro-section {
   display: flex;
-  align-items: center;
+  align-items: normal;
   justify-content: space-between;
   gap: 3rem;
 }
@@ -257,9 +328,10 @@ html {
 }
 .intro .intro-section .intro-content {
   display: flex;
+  align-items: normal;
+  justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  justify-content: center;
 }
 .intro .intro-section .intro-content span {
   color: red;
@@ -299,14 +371,15 @@ html {
   width: 70%;
   margin: 3rem auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
   gap: 2rem;
 }
 .contact-section .contact-form .user-details {
   width: 100%;
   display: flex;
+  align-items: normal;
   justify-content: space-between;
   gap: 3rem;
 }
@@ -333,8 +406,13 @@ html {
   color: white;
   padding: 1rem;
   border-radius: 30px;
-  border: none;
+  border: 2px solid black;
   cursor: pointer;
+  font-size: 1rem;
+}
+.contact-section .contact-form button:hover {
+  color: black;
+  background-color: white;
 }
 
 /* Footer  */
@@ -378,10 +456,6 @@ footer a {
   .contact-section .contact-form {
     width: 80%;
   }
-  .contact-section .contact-form button {
-    font-size: 1rem;
-    width: 10rem;
-  }
   .gallery .products {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -392,7 +466,7 @@ footer a {
     top: 1rem;
     visibility: visible;
   }
-  .navbar .nav-list ul {
+  .navbar .nav-list {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -403,7 +477,7 @@ footer a {
     background: #ffffff;
     text-align: center;
   }
-  .navbar #menu-toggle:checked + .hamburger + .nav-list ul {
+  .navbar #menu-toggle:checked + .hamburger + .nav-list {
     display: flex;
   }
 }

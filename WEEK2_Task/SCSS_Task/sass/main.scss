@@ -1,9 +1,8 @@
 @use "mixin";
 @use "faq";
+@use "variables";
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 
-// Variables
-$faint-black: rgba(0, 0, 0, 0.5);
 
 * {
     margin: 0;
@@ -31,29 +30,29 @@ html {
     background: transparent;
 }
 
-%forward-arrow {
-    position: absolute;
-    top: 5rem;
-    right: 1rem;
+// %forward-arrow {
+//     position: absolute;
+//     top: 5rem;
+//     right: 1rem;
 
-    ion-icon {
-        color: black;
-        height: 2rem;
-        width: 2rem;
-    }
-}
+//     ion-icon {
+//         color: black;
+//         height: 2rem;
+//         width: 2rem;
+//     }
+// }
 
-%backward-arrow {
-    position: absolute;
-    top: 5rem;
-    left: 1rem;
+// %backward-arrow {
+//     position: absolute;
+//     top: 5rem;
+//     left: 1rem;
 
-    ion-icon {
-        color: black;
-        height: 2rem;
-        width: 2rem;
-    }
-}
+//     ion-icon {
+//         color: black;
+//         height: 2rem;
+//         width: 2rem;
+//     }
+// }
 
 /* Navbar */
 .navbar {
@@ -63,16 +62,14 @@ html {
     padding: 1rem 2rem;
     z-index: 100;
     background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include mixin.flex-property($justify-content: space-between);
 
     /* Main head */
     .main-head {
         font-size: 1.5rem;
 
         span {
-            color: red;
+            color: variables.$color-secondary;
         }
     }
 
@@ -80,14 +77,13 @@ html {
         display: none;
     }
 
-    .nav-list ul {
-        display: flex;
-        align-items: center;
+    .nav-list {
+        @include mixin.flex-property($align-items: center);
         gap: 2rem;
         list-style: none;
-        color: $faint-black;
+        color: variables.$faint-black;
 
-        a {
+        &-items a {
             text-decoration: none;
             color: inherit;
         }
@@ -112,49 +108,56 @@ html {
 }
 
 .forward-arw-index {
-    @extend %forward-arrow;
+    // @extend %forward-arrow;
+    @include mixin.arrow($right: 1rem);
     z-index: 10;
 
     ion-icon {
         color: white;
-        height: 2rem;
-        width: 2rem;
     }
 }
 
 .backward-arw-about {
-    @extend %backward-arrow;
+    // @extend %backward-arrow;
+    @include mixin.arrow($left: 1rem);
 }
 
 .forward-arw-about {
-    @extend %forward-arrow;
+    // @extend %forward-arrow;
+    @include mixin.arrow($right: 1rem);
 }
 
 .backward-arw-products {
-    @extend %backward-arrow;
+    // @extend %backward-arrow;
+    @include mixin.arrow($left: 1rem);
 }
 
 .forward-arw-products {
-    @extend %forward-arrow;
+    // @extend %forward-arrow;
+    @include mixin.arrow($right: 1rem);
 }
 
 .backward-arw-faqs {
-    @extend %backward-arrow;
+    // @extend %backward-arrow;
+    @include mixin.arrow($left: 1rem);
 }
 
 .forward-arw-faqs {
-    @extend %forward-arrow;
+    // @extend %forward-arrow;
+    @include mixin.arrow($right: 1rem);
 }
 
 .backward-arw-contacts {
-    @extend %backward-arrow;
+    // @extend %backward-arrow;
+    @include mixin.arrow($left: 1rem);
 }
 
 /* Loader */
 @keyframes rotate {
-    0%{
+    0% {
         rotate: 0deg;
     }
+
     100% {
         rotate: 360deg;
         visibility: hidden;
@@ -204,35 +207,27 @@ html {
     padding-top: 3rem;
     background-image: url(../../images/hero-bgnew.jpg);
     background-size: cover;
+    background-position: top;
     color: white;
 
     .overlay {
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.384);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
+        @include mixin.flex-property($justify-content: center, $gap: 2rem, $direction: column);
         padding-left: 5%;
 
         h1 {
             font-size: 3rem;
         }
 
-        h4 {
+        p {
             width: 80%;
             font-weight: lighter;
             color: rgba(255, 255, 255, 0.692);
         }
 
         button {
-            @include mixin.btns(20%);
-            min-width: 10rem;
-
-            &:hover {
-                color: black;
-                background-color: white;
-            }
+            @include mixin.btns(11rem);
         }
     }
 }
@@ -246,15 +241,13 @@ html {
         @extend %head-style;
 
         span {
-            color: red;
+            color: variables.$color-secondary;
+            ;
         }
     }
 
     .intro-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 3rem;
+        @include mixin.flex-property($gap: 3rem);
 
         .intro-image img {
             width: 35vw;
@@ -262,21 +255,19 @@ html {
         }
 
         .intro-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            justify-content: center;
+            @include mixin.flex-property($justify-content: center, $gap: 2rem, $direction: column);
 
             span {
-                color: red;
+                color: variables.$color-secondary;
             }
 
             .intro-para {
-                color: $faint-black;
+                color: variables.$faint-black;
             }
 
             a {
-                color: red;
+                color: variables.$color-secondary;
+                ;
                 text-decoration: none;
             }
         }
@@ -317,34 +308,23 @@ html {
     .contact-form {
         width: 70%;
         margin: 3rem auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        gap: 2rem;
+        @include mixin.flex-property($align-items: center, $justify-content: space-around, $gap: 2rem, $direction: column);
 
         .user-details {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            gap: 3rem;
+            @include mixin.flex-property($gap: 3rem);
 
             .name-input,
             .mail-input {
                 width: 40%;
-            }
 
-            .name-input input {
-                @extend %input-style;
-            }
+                input {
+                    @extend %input-style;
+                }
 
-            .mail-input input {
-                @extend %input-style;
-            }
-
-            .name-input label,
-            .mail-input label {
-                display: block;
+                label {
+                    display: block;
+                }
             }
         }
 
@@ -361,6 +341,7 @@ html {
 
         button {
             @include mixin.btns(11rem);
+            font-size: 1rem;
         }
     }
 }
@@ -413,11 +394,6 @@ footer {
 
     .contact-section .contact-form {
         width: 80%;
-
-        button {
-            font-size: 1rem;
-            width: 10rem;
-        }
     }
 
     .gallery .products {
@@ -433,7 +409,7 @@ footer {
             visibility: visible;
         }
 
-        .nav-list ul {
+        .nav-list  {
             display: none;
             flex-direction: column;
             position: absolute;
@@ -445,7 +421,7 @@ footer {
             text-align: center;
         }
 
-        #menu-toggle:checked+.hamburger+.nav-list ul {
+        #menu-toggle:checked+.hamburger+.nav-list  {
             display: flex;
         }
     }
