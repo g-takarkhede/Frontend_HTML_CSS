@@ -1,3 +1,5 @@
+@use "../variables/variables";
+
 .faq-main {
     padding-bottom: 4rem;
 
@@ -6,11 +8,10 @@
         margin: auto;
 
         h1 {
-            font-size: 2.5rem;
             margin: 4rem auto;
 
             span {
-                color: red;
+                color: variables.$color-secondary;
             }
         }
 
@@ -20,13 +21,12 @@
             gap: 2rem;
 
             .faq .que {
-                font-size: 1.3rem;
                 font-weight: bolder;
                 margin-bottom: 1rem;
             }
 
             .faq .ans {
-                color: rgba(0, 0, 0, 0.616);
+                color: variables.$faint-black;
             }
         }
     }
@@ -37,7 +37,7 @@
     color: inherit;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     .faq-main .faq-section{
         width: 85%;
 
@@ -47,7 +47,7 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
     .faq-main .faq-section{
         width: 90%;
 

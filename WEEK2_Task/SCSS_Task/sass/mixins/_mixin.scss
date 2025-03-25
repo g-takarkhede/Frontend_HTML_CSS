@@ -1,0 +1,86 @@
+@use "../partials/animation";
+
+
+@mixin btns($width: 10rem) {
+    width: $width;
+    background-color: black;
+    color: white;
+    padding: 0.9rem 1rem;
+    border-radius: 30px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: black;
+        background-color: white;
+        transform: scale(1.05);
+    }
+}
+
+@mixin arrow($left: auto, $right: auto) {
+    position: absolute;
+    top: 5rem;
+    right: $right;
+    left: $left;
+
+    ion-icon {
+        color: black;
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+@mixin flex-property($align-items: normal, $justify-content: space-between, $gap: null, $direction: null) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+
+    @if $direction !=null {
+        flex-direction: $direction;
+    }
+
+    @if $gap !=null {
+        gap: $gap;
+    }
+}
+
+// @mixin hover-animation {
+//     transform: scale(1.05);
+//     border: 2px solid black;
+// }
+
+// Loops
+@mixin responsive-font-sizes($sizes, $tablet: false, $mobile: false) {
+    @each $size, $value in $sizes {
+        .fs-#{$size} {
+            font-size: $value;
+
+            @if $tablet {
+                @media (max-width: 768px) {
+                    font-size: map-get($tablet, $size);
+                }
+            }
+
+            @if $mobile {
+                @media (max-width: 480px) {
+                    font-size: map-get($mobile, $size);
+                }
+            }
+        }
+    }
+}
+
+@mixin generate-margin($property, $prefix) {
+    @for $i from 1 through 5 {
+        .#{$prefix}-#{$i} {
+            #{$property}: #{4 * $i}px;
+        }
+    }
+}
+
+// @mixin head-style{
+//     font-size: 2.5rem;
+//     margin: 4rem auto;
+//     text-align: center;
+// }

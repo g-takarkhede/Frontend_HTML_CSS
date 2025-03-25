@@ -73,3 +73,105 @@ When to use?	       When multiple elements share common styles	   When you need 
 
 
 
+
+
+Color Functions 🎨
+These functions help manipulate colors efficiently.
+
+Function	Use
+lighten($color, $amount)	Makes a color lighter.
+darken($color, $amount)	Makes a color darker.
+saturate($color, $amount)	Increases color saturation.
+desaturate($color, $amount)	Decreases color saturation.
+adjust-hue($color, $degrees)	Rotates the color wheel by a certain angle.
+mix($color1, $color2, $weight: 50%)	Blends two colors together.
+grayscale($color)	Converts a color to grayscale.
+invert($color)	Inverts a color.
+rgba($color, $alpha)	Changes the opacity of a color.
+opacify($color, $amount) or fade-in($color, $amount)	Increases the opacity.
+transparentize($color, $amount) or fade-out($color, $amount)	Decreases the opacity.
+
+
+
+String Functions 🔤
+String functions help manipulate and format strings.
+
+Function	Use
+quote($string)	Adds quotes around a string.
+unquote($string)	Removes quotes from a string.
+str-length($string)	Returns the length of a string.
+str-insert($string, $insert, $index)	Inserts text into a string.
+str-index($string, $substring)	Finds the index of a substring in a string.
+str-slice($string, $start, $end)	Extracts a substring.
+
+
+
+Number Functions 🔢
+These functions help with numerical calculations.
+
+Function	Use
+percentage($number)	Converts a decimal to a percentage.
+round($number)	Rounds a number to the nearest integer.
+ceil($number)	Rounds up a number.
+floor($number)	Rounds down a number.
+abs($number)	Returns the absolute value of a number.
+min($numbers...)	Returns the smallest number.
+max($numbers...)	Returns the largest number.
+random($limit)	Generates a random number up to $limit.
+
+
+List Functions 📜
+SCSS provides functions to manipulate lists.
+
+Function	Use
+length($list)	Returns the number of items in a list.
+nth($list, $index)	Retrieves an item from a list.
+append($list, $value, $separator: auto)	Adds an item to a list.
+join($list1, $list2, $separator: auto)	Joins two lists.
+index($list, $value)	Finds the position of a value in a list.
+zip($lists...)	Merges multiple lists into one.
+is-bracketed($list)	Checks if a list is enclosed in brackets.
+
+
+
+Map Functions 🗺️
+Maps are key-value pairs, and these functions help manipulate them.
+
+Function	Use
+map-get($map, $key)	Gets a value from a map.
+map-keys($map)	Returns all keys from a map.
+map-values($map)	Returns all values from a map.
+map-merge($map1, $map2)	Merges two maps.
+map-remove($map, $keys...)	Removes key-value pairs from a map.
+map-has-key($map, $key)	Checks if a key exists in a map.
+
+
+
+Selector Functions 🏷️
+Functions for handling CSS selectors.
+
+Function	Use
+selector-nest($selectors...)	Nests multiple selectors.
+selector-append($selectors...)	Appends selectors together.
+selector-extend($selector, $extendee, $extender)	Extends a selector.
+selector-replace($selector, $original, $replacement)	Replaces part of a selector.
+
+
+
+Introspection Functions 🔍
+These functions return information about values.
+
+Function	Use
+type-of($value)	Returns the type of a value.
+unit($number)	Returns the unit of a number.
+unitless($number)	Checks if a number has a unit.
+comparable($number1, $number2)	Checks if two numbers can be compared.
+
+
+
+Miscellaneous Functions 🔀
+Other useful SCSS functions.
+
+Function	Use
+if($condition, $true, $false)	Returns one of two values based on a condition.
+unique-id()	Generates a unique identifier.

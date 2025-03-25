@@ -1,6 +1,7 @@
-@use "mixin";
-@use "faq";
-@use "variables";
+@use "./mixins/mixin";
+@use "./partials/faq";
+@use "./partials/animation";
+@use "./variables/variables";
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 
 
@@ -15,9 +16,38 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Loop Usage */
+@include mixin.generate-margin(margin, m);
+
+$sizes: (
+    "large": 2.5rem,
+    "medium": 2rem,
+    "small": 1.4rem,
+    "xs": 1.1rem,
+    "xxs": 0.9rem
+);
+
+$tablet-sizes: (
+    "large": 2rem,
+    "medium": 1.75rem,
+    "small": 1.25rem,
+    "xs": 1rem,
+    "xxs": 0.8rem
+);
+
+$mobile-sizes: (
+    "large": 1.75rem,
+    "medium": 1.5rem,
+    "small": 1.2rem,
+    "xs": 0.9rem,
+    "xxs": 0.7rem
+);
+
+@include mixin.responsive-font-sizes($sizes, $tablet-sizes, $mobile-sizes);
+
+
 /* Extend/Inheritance */
 %head-style {
-    font-size: 2.5rem;
     margin: 4rem auto;
     text-align: center;
 }
@@ -66,7 +96,6 @@ html {
 
     /* Main head */
     .main-head {
-        font-size: 1.5rem;
 
         span {
             color: variables.$color-secondary;
@@ -153,27 +182,6 @@ html {
 }
 
 /* Loader */
-@keyframes rotate {
-    0% {
-        rotate: 0deg;
-    }
-
-    100% {
-        rotate: 360deg;
-        visibility: hidden;
-    }
-}
-
-@keyframes overlay-animation {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
 
 .loader-overlay {
     position: fixed;
@@ -216,10 +224,6 @@ html {
         @include mixin.flex-property($justify-content: center, $gap: 2rem, $direction: column);
         padding-left: 5%;
 
-        h1 {
-            font-size: 3rem;
-        }
-
         p {
             width: 80%;
             font-weight: lighter;
@@ -247,7 +251,7 @@ html {
     }
 
     .intro-section {
-        @include mixin.flex-property($gap: 3rem);
+        @include mixin.flex-property($align-items: center, $gap: 3rem);
 
         .intro-image img {
             width: 35vw;
@@ -257,18 +261,18 @@ html {
         .intro-content {
             @include mixin.flex-property($justify-content: center, $gap: 2rem, $direction: column);
 
-            span {
-                color: variables.$color-secondary;
-            }
-
             .intro-para {
                 color: variables.$faint-black;
             }
 
-            a {
+            .learn-more {
                 color: variables.$color-secondary;
-                ;
                 text-decoration: none;
+
+                ion-icon{
+                    position: relative;
+                    top: 3px;
+                }
             }
         }
     }
@@ -276,7 +280,7 @@ html {
 
 /* Gallery */
 .gallery {
-    h1 {
+    .gallery-head {
         @extend %head-style;
     }
 
@@ -290,6 +294,13 @@ html {
         img {
             width: 100%;
             height: auto;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                transform: scale(1.05);
+                box-shadow: 2px 2px 10px black;
+            }
         }
     }
 }
@@ -297,16 +308,15 @@ html {
 /* Contact form  */
 .contact-section {
     width: 100%;
-    margin-top: 4rem;
     padding: 2rem;
 
-    h1 {
-        font-size: 2.5rem;
-        text-align: center;
+    .contact-head {
+        @extend %head-style;
     }
 
     .contact-form {
         width: 70%;
+        max-width: 750px;
         margin: 3rem auto;
         @include mixin.flex-property($align-items: center, $justify-content: space-around, $gap: 2rem, $direction: column);
 
@@ -341,7 +351,6 @@ html {
 
         button {
             @include mixin.btns(11rem);
-            font-size: 1rem;
         }
     }
 }
@@ -369,7 +378,7 @@ footer {
 }
 
 /* Responsiveness */
-@media screen and (max-width:700px) {
+@media screen and (max-width:768px) {
     .intro {
         width: 80%;
 
@@ -377,20 +386,11 @@ footer {
             flex-direction: column;
 
             .intro-image img {
-                width: 60vw;
-            }
-
-            .intro-content h1 {
-                font-size: 1.7rem;
+                width: 75vw;
             }
         }
     }
 
-    .intro .intro-head,
-    .gallery h1,
-    .contact-section h1 {
-        font-size: 2.1rem;
-    }
 
     .contact-section .contact-form {
         width: 80%;
@@ -427,26 +427,13 @@ footer {
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:480px) {
 
     .navbar {
         padding: 1rem;
-
-        .main-head {
-            font-size: 1.2rem;
-        }
-    }
-
-    .intro .intro-head,
-    .gallery h1,
-    .contact-section h1 {
-        font-size: 1.8rem;
     }
 
     .intro .intro-section {
-        .intro-content h1 {
-            font-size: 1.5rem;
-        }
 
         .intro-image img {
             width: 70vw;
