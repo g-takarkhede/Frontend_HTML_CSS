@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fashion</title>
     <link rel="stylesheet" href="./sass/main.css">
 
     <!-- icons -->
@@ -12,13 +11,26 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </head>
-
 <body>
-    <div id="navbar-container"></div>
-    <main>
-        <div class="backward-arw-products"><a href="./about.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
-        </div>
-        <div class="forward-arw-products"><a href="./faq.html"><ion-icon name="arrow-forward-outline"></ion-icon></a>
+    <header>
+        <nav class="navbar">
+            <div class="main-head">
+                <h1 class="fs-large"><a href="./index.html"> <span>Little</span> Fashion</a></h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger"></label>
+            <ul class="nav-list">
+                <li class="nav-list-items"><a href="./index.html">Home</a></li>
+                <li class="nav-list-items"><a href="./about.html">About</a></li>
+                <li class="nav-list-items"><a href="./products.html">Products</a></li>
+                <li class="nav-list-items"><a href="./faq.html">FAQ's</a></li>
+                <li class="nav-list-items"><a href="./contacts.html">Contacts</a></li>
+                <li class="nav-list-items account-icon"><a href="#" id="accountIcon"><ion-icon
+                            name="person-circle-outline"></ion-icon></a></li>
+            </ul>
+        </nav>
+        <div class="loader-overlay">
+            <div class="loader"></div>
         </div>
         <dialog class="acc-dialog" id="accountDialog">
             <div class="dialog-content">
@@ -39,22 +51,6 @@
                 </form>
             </div>
         </dialog>
-
-
-        <div class="gallery" id="gallery" style="margin-top: 5rem; display: flex; flex-direction:column; margin-bottom: 5rem;">
-            <h1  class="gallery-head fs-large">Featured Products</h1>
-            <div class="products">
-
-                <img src="../images/p1.jpg" alt="" class="img1">
-                <img src="../images/p2.jpg" alt="" class="img2">
-                <img src="../images/p3.jpg" alt="" class="img3">
-                <img src="../images/p4.jpg" alt="" class="img4">
-                <img src="../images/p5.jpg" alt="" class="img5">
-                <img src="../images/p6.jpg" alt="" class="img6">
-            </div>
-        </div>
-    </main>
-    <script src="./Scripts/navbar.js"></script>
+    </header>
 </body>
-
 </html>

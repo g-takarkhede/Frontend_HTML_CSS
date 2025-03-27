@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@function rem($px-value) {
+    @return math.div($px-value, 16)* 1rem;
+}
+  
+
+
+// @function calculateHeight($width) {
+//     @return math.div(($width * 9) , 16); // 16:9 aspect ratio formula
+// }

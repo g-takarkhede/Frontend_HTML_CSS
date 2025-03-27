@@ -63,3 +63,6 @@ background-repeat: no-repeat;
 cover: leaves no empty space
 contain: whole image is visible (image can repeat)
 auto: default (may be zoomed in image)
+
+
+In CSS, when you use a percentage for padding, it is calculated based on the width of the containing element (not height).

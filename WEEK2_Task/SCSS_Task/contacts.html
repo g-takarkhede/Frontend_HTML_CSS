@@ -14,33 +14,13 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="main-head">
-                <h1 class="fs-large"><a href="./index.html"> <span>Little</span> Fashion</a></h1>
-            </div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger"></label>
-            <!-- <div class="nav-list"> -->
-                <ul class="nav-list">
-                    <li class="nav-list-items"><a href="./index.html">Home</a></li>
-                    <li class="nav-list-items"><a href="./about.html">About</a></li>
-                    <li class="nav-list-items"><a href="./products.html">Products</a></li>
-                    <li class="nav-list-items"><a href="./faq.html">FAQ's</a></li>
-                    <li class="nav-list-items"><a href="#">Contacts</a></li>
-                    <li class="nav-list-items account-icon"><a href="#"><ion-icon
-                                name="person-circle-outline"></ion-icon></a></li>
-                </ul>
-            <!-- </div> -->
-        </nav>
-        <div class="loader-overlay">
-            <div class="loader"></div>
-        </div>
-    </header>
+
+    <div id="navbar-container"></div>
     <main>
         <div class="backward-arw-contacts"><a href="./faq.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
         </div>
-        <div class="contact-section" style="padding-top: 6rem;">
+
+        <div class="contact-section" style="margin-top: 5rem;">
             <h1 class="contact-head fs-large">GET IN TOUCH</h1>
             <form action="submit.php" method="POST" class="contact-form">
                 <div class="user-details">
@@ -61,6 +41,8 @@
             </form>
         </div>
     </main>
+    <script src="./Scripts/navbar.js"></script>
+    
 </body>
 
 </html>

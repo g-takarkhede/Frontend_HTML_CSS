@@ -15,34 +15,33 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="main-head">
-                <h1 class="fs-large"><a href="./index.html"> <span>Little</span> Fashion</a></h1>
-            </div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger"></label>
-            <!-- <div class="nav-list"> -->
-                <ul class="nav-list">
-                    <li class="nav-list-items"><a href="./index.html">Home</a></li>
-                    <li class="nav-list-items"><a href="./about.html">About</a></li>
-                    <li class="nav-list-items"><a href="./products.html">Products</a></li>
-                    <li class="nav-list-items"><a href="#">FAQ's</a></li>
-                    <li class="nav-list-items"><a href="./contacts.html">Contacts</a></li>
-                    <li class="nav-list-items account-icon"><a href="#"><ion-icon
-                                name="person-circle-outline"></ion-icon></a></li>
-                </ul>
-            <!-- </div> -->
-        </nav>
-        <div class="loader-overlay">
-            <div class="loader"></div>
-        </div>
-    </header>
+    <div id="navbar-container"></div>
     <main class="faq-main">
         <div class="backward-arw-faqs"><a href="./products.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
         </div>
         <div class="forward-arw-faqs"><a href="./contacts.html"><ion-icon name="arrow-forward-outline"></ion-icon></a>
         </div>
+
+        <dialog class="acc-dialog" id="accountDialog">
+            <div class="dialog-content">
+                <button id="closeDialog" class="close-button">×</button>
+                <h2 class="fs-medium">Sign In</h2>
+                <form class="signIn-form" action="">
+                    <div class="username">
+                        <label for="name">Username:</label>
+                        <input class="username-input" type="text" id="name">
+                    </div>
+                    <div class="password">
+                        <label for="passwd">Password:</label>
+                        <input class="password-input" type="password" name="password" id="passwd">
+                    </div>
+                    <div class="submit-btn">
+                        <input class="fs-xs" type="submit">
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
         <div class="faq-section" style="margin-top: 5rem;display: flex; flex-direction: column;">
             <h1 class="faq-head fs-medium"><span>Your favorite questions</span><br>
                 and our answers to them</h1>
@@ -73,7 +72,7 @@
         </div>
     </main>
 
-
+    <script src="./Scripts/navbar.js"></script>
 </body>
 
 </html>

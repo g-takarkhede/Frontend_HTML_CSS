@@ -14,34 +14,32 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="main-head">
-                <h1 class="fs-large"><a href="./index.html"> <span>Little</span> Fashion</a></h1>
-            </div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger"></label>
-            <!-- <div class="nav-list"> -->
-                <ul class="nav-list">
-                    <li class="nav-list-items"><a href="./index.html">Home</a></li>
-                    <li class="nav-list-items"><a href="#">About</a></li>
-                    <li class="nav-list-items"><a href="./products.html">Products</a></li>
-                    <li class="nav-list-items"><a href="./faq.html">FAQ's</a></li>
-                    <li class="nav-list-items"><a href="./contacts.html">Contacts</a></li>
-                    <li class="nav-list-items account-icon"><a href="#"><ion-icon
-                                name="person-circle-outline"></ion-icon></a></li>
-                </ul>
-            <!-- </div> -->
-        </nav>
-        <div class="loader-overlay">
-            <div class="loader"></div>
-        </div>
-    </header>
+    <div id="navbar-container"></div>
     <main>
         <div class="backward-arw-about"><a href="./index.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
         </div>
         <div class="forward-arw-about"><a href="./products.html"><ion-icon name="arrow-forward-outline"></ion-icon></a>
         </div>
+        <dialog class="acc-dialog" id="accountDialog">
+            <div class="dialog-content">
+                <button id="closeDialog" class="close-button">×</button>
+                <h2 class="fs-medium">Sign In</h2>
+                <form class="signIn-form" action="">
+                    <div class="username">
+                        <label for="name">Username:</label>
+                        <input class="username-input" type="text" id="name">
+                    </div>
+                    <div class="password">
+                        <label for="passwd">Password:</label>
+                        <input class="password-input" type="password" name="password" id="passwd">
+                    </div>
+                    <div class="submit-btn">
+                        <input class="fs-xs" type="submit">
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
         <div class="intro" style="margin-top: 5rem; display: flex; flex-direction: column;">
             <h1 class="intro-head fs-large">Get started with <span> Little</span> Fashion</h1>
 
@@ -51,19 +49,28 @@
                     <h1 class="intro-content-head fs-medium"> Good <span> Design</span>
                         Ideas for <br> your fashion </h1>
 
-                    <p class="intro-para fs-xs">Little Fashion templates comes with sign in / sign up pages, product listing /
+                    <p class="intro-para fs-xs">Little Fashion templates comes with sign in / sign up pages, product
+                        listing /
                         product detail,
                         about, FAQs, and contact page.
 
                         Since this HTML template is based on Boostrap CSS library, you can feel free to add more
                         components as you need.</p>
 
-                        <a class="learn-more" href="#"> Learn more about us <span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+                    <a class="learn-more" href="#"> Learn more about us <span><ion-icon
+                                name="arrow-forward-outline"></ion-icon></span></a>
 
                 </div>
             </div>
         </div>
+        <div class="fashion-video">
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/s36WRbd3A_Y?si=vOuWEOTXIhnV4op8"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
     </main>
+    <script src="./Scripts/navbar.js"></script>
 </body>
 
 </html>

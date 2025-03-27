@@ -26,6 +26,34 @@
     transform: scale(1.05);
   }
 }
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--start-position));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Extend/Inheritance */
+.intro .intro-head, .gallery .gallery-head, .contact-section .contact-head, .faq-main .faq-section .faq-head {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.contact-section .contact-form .user-details .name-input input,
+.contact-section .contact-form .user-details .mail-input input, .contact-section .contact-form .other-details .inspiration select,
+.contact-section .contact-form .other-details .reason-to-connect select, .contact-section .contact-form .other-details .inspiration input,
+.contact-section .contact-form .other-details .reason-to-connect input {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .faq-main {
   padding-bottom: 4rem;
 }
@@ -33,14 +61,13 @@
   width: 70%;
   margin: auto;
 }
-.faq-main .faq-section h1 {
-  margin: 4rem auto;
-}
-.faq-main .faq-section h1 span {
+.faq-main .faq-section .faq-head span {
   color: red;
 }
 .faq-main .faq-section .faqs {
   display: flex;
+  align-items: normal;
+  justify-content: space-between;
   flex-direction: column;
   gap: 2rem;
 }
@@ -60,17 +87,6 @@
 @media screen and (max-width: 768px) {
   .faq-main .faq-section {
     width: 85%;
-  }
-  .faq-main .faq-section h1 {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .faq-main .faq-section {
-    width: 90%;
-  }
-  .faq-main .faq-section h1 {
-    font-size: 1.7rem;
   }
 }
 * {
@@ -175,21 +191,6 @@ html {
   }
 }
 
-/* Extend/Inheritance */
-.contact-section .contact-head, .gallery .gallery-head, .intro .intro-head {
-  margin: 4rem auto;
-  text-align: center;
-}
-
-.contact-section .contact-form .user-details .name-input input,
-.contact-section .contact-form .user-details .mail-input input {
-  width: 100%;
-  height: 2rem;
-  border: none;
-  border-bottom: 2px solid black;
-  background: transparent;
-}
-
 /* Navbar */
 .navbar {
   position: fixed;
@@ -226,14 +227,18 @@ html {
   height: 1.5rem;
   width: 1.5rem;
 }
+.navbar .nav-list-items:hover {
+  color: black;
+  transform: scale(1.05);
+}
 .navbar .hamburger::before {
   content: "≡";
-  font-size: 30px;
+  font-size: 1.875rem;
   visibility: hidden;
 }
 .navbar #menu-toggle:checked + .hamburger::before {
   content: "✖";
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 
 .forward-arw-index {
@@ -343,19 +348,67 @@ html {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.708);
   z-index: 1000;
-  animation: overlay-animation 4s ease-out forwards;
+  animation: overlay-animation 2s ease-out forwards;
 }
 .loader-overlay .loader {
   height: 100px;
   width: 100px;
   border: 5px solid rgba(0, 0, 0, 0.607);
   border-radius: 50%;
-  position: fixed;
-  left: 45%;
-  top: 45%;
+  position: relative;
+  margin: auto;
+  top: 40%;
   z-index: 10;
   border-top: 5px solid white;
   animation: rotate 2s ease-in;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.acc-dialog {
+  margin: auto;
+}
+.acc-dialog .dialog-content {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.acc-dialog .dialog-content .close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  cursor: pointer;
+}
+.acc-dialog .dialog-content .signIn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.acc-dialog .dialog-content .signIn-form .username .username-input,
+.acc-dialog .dialog-content .signIn-form .password .password-input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+.acc-dialog .dialog-content .signIn-form .submit-btn input {
+  width: 8rem;
+  background-color: black;
+  color: white;
+  padding: 0.9rem 1rem;
+  border-radius: 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.acc-dialog .dialog-content .signIn-form .submit-btn input:hover {
+  color: black;
+  background-color: white;
+  transform: scale(1.05);
 }
 
 /* Hero Page */
@@ -417,6 +470,7 @@ html {
 .intro .intro-section .intro-image img {
   width: 35vw;
   height: auto;
+  position: relative;
 }
 .intro .intro-section .intro-content {
   display: flex;
@@ -435,6 +489,23 @@ html {
 .intro .intro-section .intro-content .learn-more ion-icon {
   position: relative;
   top: 3px;
+}
+
+.fashion-video {
+  position: relative;
+  width: 75vw;
+  max-width: 43.75rem;
+  padding-bottom: 35.25%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  /* Aspect ratio (16:9) 56.25% */
+  margin: 4rem auto;
+}
+.fashion-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Gallery */
@@ -459,12 +530,14 @@ html {
 /* Contact form  */
 .contact-section {
   width: 100%;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
 }
 .contact-section .contact-form {
   width: 70%;
   max-width: 750px;
-  margin: 3rem auto;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -476,7 +549,7 @@ html {
   display: flex;
   align-items: normal;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2rem;
 }
 .contact-section .contact-form .user-details .name-input,
 .contact-section .contact-form .user-details .mail-input {
@@ -484,6 +557,32 @@ html {
 }
 .contact-section .contact-form .user-details .name-input label,
 .contact-section .contact-form .user-details .mail-input label {
+  display: block;
+}
+.contact-section .contact-form .other-details {
+  width: 100%;
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.contact-section .contact-form .other-details .inspiration,
+.contact-section .contact-form .other-details .reason-to-connect {
+  width: 40%;
+}
+.contact-section .contact-form .other-details .inspiration select,
+.contact-section .contact-form .other-details .reason-to-connect select {
+  position: relative;
+  margin-top: 0.5rem;
+}
+.contact-section .contact-form .other-details .inspiration input,
+.contact-section .contact-form .other-details .reason-to-connect input {
+  border: none;
+  position: relative;
+  margin-top: 0.5rem;
+}
+.contact-section .contact-form .other-details .inspiration label,
+.contact-section .contact-form .other-details .reason-to-connect label {
   display: block;
 }
 .contact-section .contact-form .message-input {
@@ -541,6 +640,9 @@ footer a {
   .intro .intro-section .intro-image img {
     width: 75vw;
   }
+  .fashion-video {
+    padding-bottom: 45%;
+  }
   .contact-section .contact-form {
     width: 80%;
   }
@@ -576,17 +678,25 @@ footer a {
   .intro .intro-section .intro-image img {
     width: 70vw;
   }
-  .contact-section .contact-form {
-    width: 90%;
+  .gallery .products {
+    grid-template-columns: 1fr;
   }
-  .contact-section .contact-form .user-details {
+  .contact-section .contact-form {
+    width: 60%;
+    min-width: 13.75rem;
+  }
+  .contact-section .contact-form .user-details,
+  .contact-section .contact-form .other-details {
     flex-direction: column;
   }
   .contact-section .contact-form .user-details .name-input,
-  .contact-section .contact-form .user-details .mail-input {
+  .contact-section .contact-form .user-details .mail-input,
+  .contact-section .contact-form .user-details .inspiration,
+  .contact-section .contact-form .user-details .reason-to-connect,
+  .contact-section .contact-form .other-details .name-input,
+  .contact-section .contact-form .other-details .mail-input,
+  .contact-section .contact-form .other-details .inspiration,
+  .contact-section .contact-form .other-details .reason-to-connect {
     width: 100%;
-  }
-  .gallery .products {
-    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=main.css.map */

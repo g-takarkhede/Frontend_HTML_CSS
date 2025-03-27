@@ -21,33 +21,71 @@
 
 <body>
     <!-- Design a product landing page with a header, navigation bar, grid-based product gallery, and responsive layout. -->
-    <header>
+    <!-- <header>
         <nav class="navbar">
             <div class="main-head">
                 <h1 class="fs-large"><span>Little</span> Fashion</h1>
             </div>
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="hamburger"></label>
-            <!-- <div class="nav-list"> -->
-                <ul class="nav-list">
-                    <li class="nav-list-items"><a href="#">Home</a></li>
-                    <li class="nav-list-items"><a href="./about.html">About</a></li>
-                    <li class="nav-list-items"><a href="./products.html">Products</a></li>
-                    <li class="nav-list-items"><a href="./faq.html">FAQ's</a></li>
-                    <li class="nav-list-items"><a href="./contacts.html">Contacts</a></li>
-                    <li class="nav-list-items account-icon"><a href="#"><ion-icon
-                                name="person-circle-outline"></ion-icon></a></li>
-                </ul>
-            <!-- </div> -->
-            
+            <ul class="nav-list">
+                <li class="nav-list-items"><a href="#">Home</a></li>
+                <li class="nav-list-items"><a href="./about.html">About</a></li>
+                <li class="nav-list-items"><a href="./products.html">Products</a></li>
+                <li class="nav-list-items"><a href="./faq.html">FAQ's</a></li>
+                <li class="nav-list-items"><a href="./contacts.html">Contacts</a></li>
+                <li class="nav-list-items account-icon"><a href="#" id="accountIcon"><ion-icon
+                            name="person-circle-outline"></ion-icon></a></li>
+            </ul>
         </nav>
         <div class="loader-overlay">
             <div class="loader"></div>
         </div>
-    </header>
+        <dialog class="acc-dialog" id="accountDialog">
+            <div class="dialog-content">
+                <button id="closeDialog" class="close-button">×</button>
+                <h2 class="fs-medium">Sign In</h2>
+                <form class="signIn-form" action="">
+                    <div class="username">
+                        <label for="name">Username:</label>
+                        <input class="username-input" type="text" id="name">
+                    </div>
+                    <div class="password">
+                        <label for="passwd">Password:</label>
+                        <input class="password-input" type="password" name="password" id="passwd">
+                    </div>
+                    <div class="submit-btn">
+                        <input class="fs-xs" type="submit">
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
+    </header> -->
+    <div id="navbar-container"></div>
     <main>
         <div class="forward-arw-index"><a href="./about.html"><ion-icon name="arrow-forward-outline"></ion-icon></a>
         </div>
+        <!-- <dialog class="acc-dialog" id="accountDialog">
+            <div class="dialog-content">
+                <button id="closeDialog" class="close-button">×</button>
+                <h2 class="fs-medium">Sign In</h2>
+                <form class="signIn-form" action="">
+                    <div class="username">
+                        <label for="name">Username:</label>
+                        <input class="username-input" type="text" id="name">
+                    </div>
+                    <div class="password">
+                        <label for="passwd">Password:</label>
+                        <input class="password-input" type="password" name="password" id="passwd">
+                    </div>
+                    <div class="submit-btn">
+                        <input class="fs-xs" type="submit">
+                    </div>
+                </form>
+            </div>
+        </dialog> -->
+
         <div class="hero-pg">
             <div class="overlay">
                 <h1 class="fs-xl"> Cool Fashion</h1>
@@ -57,7 +95,6 @@
                 <button class="hero-btn fs-xxs">WORK WITH US</button>
             </div>
         </div>
-
         <div class="intro">
             <h1 class="intro-head fs-large">Get started with <span> Little</span> Fashion</h1>
 
@@ -67,14 +104,16 @@
                     <h1 class="intro-content-head fs-medium"> Good <span> Design</span>
                         Ideas for <br> your fashion </h1>
 
-                    <p class="intro-para fs-xs">Little Fashion templates comes with sign in / sign up pages, product listing /
+                    <p class="intro-para fs-xs">Little Fashion templates comes with sign in / sign up pages, product
+                        listing /
                         product detail,
                         about, FAQs, and contact page.
 
                         Since this HTML template is based on Boostrap CSS library, you can feel free to add more
                         components as you need.</p>
 
-                    <a class="learn-more" href="#"> Learn more about us <span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+                    <a class="learn-more" href="#"> Learn more about us <span><ion-icon
+                                name="arrow-forward-outline"></ion-icon></span></a>
 
                 </div>
             </div>
@@ -83,12 +122,12 @@
             <h1 class="gallery-head fs-large">Featured Products</h1>
             <div class="products">
 
-                <img src="../images/p1.jpg" alt="" class="img1">
-                <img src="../images/p2.jpg" alt="" class="img2">
-                <img src="../images/p3.jpg" alt="" class="img3">
-                <img src="../images/p4.jpg" alt="" class="img4">
-                <img src="../images/p5.jpg" alt="" class="img5">
-                <img src="../images/p6.jpg" alt="" class="img6">
+                <img src="../images/p1.jpg" alt="product image" class="img1">
+                <img src="../images/p2.jpg" alt="product image" class="img2">
+                <img src="../images/p3.jpg" alt="product image" class="img3">
+                <img src="../images/p4.jpg" alt="product image" class="img4">
+                <img src="../images/p5.jpg" alt="product image" class="img5">
+                <img src="../images/p6.jpg" alt="product image" class="img6">
             </div>
         </div>
         <div class="contact-section">
@@ -104,6 +143,23 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                 </div>
+                <div class="other-details">
+                    <div class="inspiration">
+                        <label for="style-image">Style Inspiration:</label>
+                        <input type="file" id="style-image" name="style-image" accept="image/*">
+
+                    </div>
+                    <div class="reason-to-connect">
+                        <label for="reason">Reason for Contact:</label>
+                        <select id="reason" name="reason" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="inquiry">General Inquiry</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="custom-design">Custom Design Request</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="message-input">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
@@ -111,11 +167,13 @@
                 <a href="#"><button type="submit" class="submit-btn fs-xs">Send Message</button></a>
             </form>
         </div>
+        <!-- <div class="up-arrow"><ion-icon name="arrow-up-circle-outline"></ion-icon></div> -->
     </main>
     <footer>
         <h4>Copyright &copy; 2045 <a href="#"><span> Little</span> Fashion</a></h4>
     </footer>
 
+    <script src="./Scripts/navbar.js"></script>
 </body>
 
 </html>

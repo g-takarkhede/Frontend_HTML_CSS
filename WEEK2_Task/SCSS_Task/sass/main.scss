@@ -2,6 +2,8 @@
 @use "./partials/faq";
 @use "./partials/animation";
 @use "./variables/variables";
+@use "./inheritance/inherit";
+@use "./functions/functions";
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 
 
@@ -45,45 +47,6 @@ $mobile-sizes: (
 
 @include mixin.responsive-font-sizes($sizes, $tablet-sizes, $mobile-sizes);
 
-
-/* Extend/Inheritance */
-%head-style {
-    margin: 4rem auto;
-    text-align: center;
-}
-
-%input-style {
-    width: 100%;
-    height: 2rem;
-    border: none;
-    border-bottom: 2px solid black;
-    background: transparent;
-}
-
-// %forward-arrow {
-//     position: absolute;
-//     top: 5rem;
-//     right: 1rem;
-
-//     ion-icon {
-//         color: black;
-//         height: 2rem;
-//         width: 2rem;
-//     }
-// }
-
-// %backward-arrow {
-//     position: absolute;
-//     top: 5rem;
-//     left: 1rem;
-
-//     ion-icon {
-//         color: black;
-//         height: 2rem;
-//         width: 2rem;
-//     }
-// }
-
 /* Navbar */
 .navbar {
     position: fixed;
@@ -121,18 +84,23 @@ $mobile-sizes: (
             height: 1.5rem;
             width: 1.5rem;
         }
+
+        &-items:hover {
+            color: black;
+            transform: scale(1.05);
+        }
     }
 
     /* Hamburger Icon */
     .hamburger::before {
         content: "≡";
-        font-size: 30px;
+        font-size: functions.rem(30);
         visibility: hidden;
     }
 
     #menu-toggle:checked+.hamburger::before {
         content: "✖";
-        font-size: 30px;
+        font-size: functions.rem(30);
     }
 }
 
@@ -189,22 +157,63 @@ $mobile-sizes: (
     height: 100%;
     background-color: rgba(0, 0, 0, 0.708);
     z-index: 1000;
-    animation: overlay-animation 4s ease-out forwards;
+    animation: overlay-animation 2s ease-out forwards;
 
     .loader {
         height: 100px;
         width: 100px;
         border: 5px solid rgba(0, 0, 0, 0.607);
         border-radius: 50%;
-        position: fixed;
-        left: 45%;
-        top: 45%;
+        position: relative;
+        margin: auto;
+        top: 40%;
         z-index: 10;
         border-top: 5px solid white;
         animation: rotate 2s ease-in;
     }
 }
 
+// Modal 
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.acc-dialog {
+    margin: auto;
+
+    .dialog-content {
+        position: relative;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 1rem;
+            cursor: pointer;
+        }
+
+        .signIn-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+
+            .username .username-input,
+            .password .password-input {
+                border: none;
+                border-bottom: 1px solid black;
+            }
+
+            .submit-btn input {
+                @include mixin.btns(8rem);
+            }
+        }
+    }
+}
 
 
 /* Hero Page */
@@ -256,6 +265,20 @@ $mobile-sizes: (
         .intro-image img {
             width: 35vw;
             height: auto;
+            position: relative;
+            // transform: translateX(
+            //     if($direction == left, -100px, 100px)
+            // );
+            // transition: all 0.6s ease-in-out;
+            // left: -150%;
+            // animation: slide 1s ease-in forwards;
+
+            // opacity: 0;
+            // --start-position: -150%; 
+
+            // animation: slide-in linear both;
+            // animation-timeline: view();
+            // animation-range: entry 20% cover 50%;
         }
 
         .intro-content {
@@ -269,12 +292,31 @@ $mobile-sizes: (
                 color: variables.$color-secondary;
                 text-decoration: none;
 
-                ion-icon{
+                ion-icon {
                     position: relative;
                     top: 3px;
                 }
             }
         }
+    }
+}
+
+.fashion-video {
+    position: relative;
+    width: 75vw;
+    max-width: functions.rem(700);
+    padding-bottom: 35.25%;
+    box-shadow: 5px 5px 5px variables.$faint-black;
+    /* Aspect ratio (16:9) 56.25% */
+    // height: functions.calculateHeight();
+    margin: 4rem auto;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -297,7 +339,7 @@ $mobile-sizes: (
             border-radius: 20px;
             transition: all 0.3s ease-in-out;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.05);
                 box-shadow: 2px 2px 10px black;
             }
@@ -308,7 +350,9 @@ $mobile-sizes: (
 /* Contact form  */
 .contact-section {
     width: 100%;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
 
     .contact-head {
         @extend %head-style;
@@ -317,12 +361,12 @@ $mobile-sizes: (
     .contact-form {
         width: 70%;
         max-width: 750px;
-        margin: 3rem auto;
+        margin: auto;
         @include mixin.flex-property($align-items: center, $justify-content: space-around, $gap: 2rem, $direction: column);
 
         .user-details {
             width: 100%;
-            @include mixin.flex-property($gap: 3rem);
+            @include mixin.flex-property($gap: 2rem);
 
             .name-input,
             .mail-input {
@@ -330,6 +374,33 @@ $mobile-sizes: (
 
                 input {
                     @extend %input-style;
+                }
+
+                label {
+                    display: block;
+                }
+            }
+        }
+
+        .other-details {
+            width: 100%;
+            @include mixin.flex-property($gap: 2rem);
+
+            .inspiration,
+            .reason-to-connect {
+                width: 40%;
+
+                select {
+                    @extend %input-style;
+                    position: relative;
+                    margin-top: 0.5rem;
+                }
+
+                input {
+                    @extend %input-style;
+                    border: none;
+                    position: relative;
+                    margin-top: 0.5rem;
                 }
 
                 label {
@@ -354,6 +425,7 @@ $mobile-sizes: (
         }
     }
 }
+
 
 /* Footer  */
 footer {
@@ -391,6 +463,9 @@ footer {
         }
     }
 
+    .fashion-video {
+        padding-bottom: 45%;
+    }
 
     .contact-section .contact-form {
         width: 80%;
@@ -409,7 +484,7 @@ footer {
             visibility: visible;
         }
 
-        .nav-list  {
+        .nav-list {
             display: none;
             flex-direction: column;
             position: absolute;
@@ -421,7 +496,7 @@ footer {
             text-align: center;
         }
 
-        #menu-toggle:checked+.hamburger+.nav-list  {
+        #menu-toggle:checked+.hamburger+.nav-list {
             display: flex;
         }
     }
@@ -440,20 +515,24 @@ footer {
         }
     }
 
-    .contact-section .contact-form {
-        width: 90%;
+    .gallery .products {
+        grid-template-columns: 1fr;
+    }
 
-        .user-details {
+    .contact-section .contact-form {
+        width: 60%;
+        min-width: functions.rem(220);
+
+        .user-details,
+        .other-details {
             flex-direction: column;
 
             .name-input,
-            .mail-input {
+            .mail-input,
+            .inspiration,
+            .reason-to-connect {
                 width: 100%;
             }
         }
-    }
-
-    .gallery .products {
-        grid-template-columns: 1fr;
     }
 }
